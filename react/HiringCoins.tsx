@@ -10,7 +10,7 @@ const HiringCoins = () => {
   const api = `https://hccontroll03.app.br/v1`;
 
   React.useEffect(() => {
-    console.log("Verificando se o usuário está autenticado");
+    // console.log("Verificando se o usuário está autenticado");
     axios.get('/api/checkout/pub/orderform')
     .then((response: any) => {
       setUser(response.data.clientProfileData.email)
@@ -34,7 +34,7 @@ const HiringCoins = () => {
       {
         user ? (
           <Suspense fallback="">
-            <div className={styles.container} title={`Você tem 100 hiring coins`} >
+            <div className={styles.container} title={`Você tem ${coins} hiring coins`} >
               <Coins size={16} color="#fff" />
               <span className={styles.text}>{coins} hiring coins</span>
             </div>
